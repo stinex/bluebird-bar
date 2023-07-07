@@ -13,15 +13,15 @@ export const Home = () => {
 
   return (
     <Layout title="" description="Главная">
-      <div className="max-w-[1545px] ml-auto flex gap-[50px] lg:gap-[100px] items-center px-[15px] 3xl:px-[0] xl:px-[15px] lg:px-[15px] md:px-[39px] sm:px-[39px]">
-        <div className="mb-[100px]">
+      <div className="flex-col md:flex-row  max-w-[1545px] ml-auto flex gap-[50px] lg:gap-[100px] items-center px-[15px] 3xl:px-[0] xl:px-[15px] lg:px-[15px] md:px-[39px] md:pr-[0px] sm:px-[15px]">
+        <div>
           <h5 className="text-secondaryColor text-base font-sans tracking-[5px] mb-[14px] leading-4">
             Breakfast
           </h5>
-          <h1 className="max-w-[500px] text-secondaryColor font-body font-semibold text-[100px] leading-[110px] mb-[25px]">
+          <h1 className="max-w-[500px] text-secondaryColor font-body font-semibold text-[60px] leading-tight mb-[25px] lg:leading-[110px] lg:text-[100px]">
             Welcome to Bar
           </h1>
-          <div className="ml-[25px]">
+          <div className="ml-0 lg:ml-[25px]">
             <p className="text-typeographyColor text-base max-w-[400px] mb-[60px]">
               Donec leo mi ut ac tristique eget elementum vitae ut. In quisque
               justo quis parturient viverra morbi.

@@ -13,7 +13,7 @@ const Layout: FC<PropsWithChildren<ILayout>> = ({ children, ...rest }) => {
     <>
       <Meta {...rest} />
       <Header />
-      <main className='flex-1'>{children}</main>
+      <main className="flex-0 lg:flex-1">{children}</main>
       <Footer />
     </>
   )

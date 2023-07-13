@@ -9,7 +9,7 @@ const Social: FC = () => {
         <a
           href={item.href}
           key={item.name}
-          className="h-[50px] w-[50px] bg-complementaryColor hover:bg-beigeColor ease-in-out duration-300 rounded-full grid place-items-center"
+          className="h-[50px] w-[50px] bg-complementaryColor hover:bg-blueColor ease-in-out duration-300 rounded-full grid place-items-center"
         >
           <Image src={item.icon} alt={item.name} />
         </a>

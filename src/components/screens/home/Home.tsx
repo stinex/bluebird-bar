@@ -6,6 +6,8 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
 import Layout from '@/components/layout/Layout'
 import { Container } from '@/components/container/Container'
+import { advantages_RU } from '@/assets/data/data.ru'
+import Image from 'next/image'
 
 export const Home = () => {
   const navigationPrevRef = useRef(null)
@@ -28,7 +30,7 @@ export const Home = () => {
             </p>
             <button
               type="button"
-              className="py-[20px] px-[30px] bg-mainColor text-sm uppercase hover:bg-beigeColor hover:text-mainColor ease-in-out duration-300"
+              className="py-[20px] px-[30px] bg-mainColor text-sm uppercase hover:bg-blueColor hover:text-mainColor ease-in-out duration-300"
             >
               RESERVATIONS
             </button>
@@ -38,6 +40,12 @@ export const Home = () => {
           <Swiper
             className="h-[100%]"
             modules={[Navigation]}
+            onInit={(swiper) => {
+              swiper.params.navigation.prevEl = navigationPrevRef.current
+              swiper.params.navigation.nextEl = navigationNextRef.current
+              swiper.navigation.init()
+              swiper.navigation.update()
+            }}
             navigation={{
               prevEl: navigationPrevRef.current,
               nextEl: navigationNextRef.current,
@@ -69,7 +77,28 @@ export const Home = () => {
         </div>
       </div>
 
-      <Container>1343 aspect-ratio: 1 / 1;</Container>
+      <div className="bg-complementaryColor ld:py-[130px]  md:py-[100px] py-[80px]">
+        <Container>
+          <div className="grid gap-[30px] lg:grid-cols-3 md:grid-cols-2 grid-cols-1 max-w-[1170px] m-auto">
+            {advantages_RU.map((item) => (
+              <div
+                key={item.title}
+                className="flex md:flex-row flex-col  md:items-start items-center text-center gap-[20px]"
+              >
+                <Image src={item.img} alt={item.title} />
+                <div className="center">
+                  <h3 className="text-secondaryColor font-semibold mb-[10px] text-4xl">
+                    {item.title}
+                  </h3>
+                  <p className="text-typeographyColor font-normal text-base">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
     </Layout>
   )
 }
